@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<!DOCTYPE rdf:RDF [
+	<!ENTITY ldap "http://purl.org/net/ldap#" >
+	<!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+	<!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+	<!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+	<!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+]>
+<rdf:RDF
+		xmlns="&ldap;"
+		xmlns:ldap="&ldap;"
+		xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+		xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+		xmlns:owl="http://www.w3.org/2002/07/owl#"
+		xmlns:dc="http://purl.org/dc/elements/1.1/"
+		xml:base="&ldap;">
+
+	<owl:Ontology rdf:about="http://purl.org/net/ldap"
+		rdfs:label="Basic vocabulary to use LDAP data in RDF"
+		dc:creator="Sebastian Dietzold"
+	/>
+
+	<owl:Class rdf:about="#object">
+		<rdfs:label>object</rdfs:label>
+		<rdfs:comment>This is NOT top but the class of all LDAP objects.</rdfs:comment>
+	</owl:Class>
+
+	<owl:ObjectProperty rdf:about="#hasDITChild">
+		<rdfs:label>hasDITChild</rdfs:label>
+		<rdfs:comment>has child in directory information tree</rdfs:comment>
+		<rdf:type rdf:resource="&owl;InverseFunctionalProperty" />
+		<owl:inverseOf rdf:resource="#hasDITParent" />
+		<rdfs:domain rdf:resource="#object"/>
+		<rdfs:range rdf:resource="#object"/>
+	</owl:ObjectProperty>
+
+	<owl:ObjectProperty rdf:about="#hasDITParent">
+		<rdfs:label>hasDITParent</rdfs:label>
+		<rdfs:comment>has parent in directory information tree</rdfs:comment>
+		<owl:inverseOf rdf:resource="#hasDITChild" />
+		<rdf:type rdf:resource="&owl;FunctionalProperty" />
+		<rdfs:domain rdf:resource="#object"/>
+		<rdfs:range rdf:resource="#object"/>
+	</owl:ObjectProperty>
+
+</rdf:RDF>
+

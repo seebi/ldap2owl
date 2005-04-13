@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+	xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+	xmlns:doap="http://usefulinc.com/ns/doap#"
+	xmlns:foaf="http://xmlns.com/foaf/0.1/"
+	xml:lang="en">
+	<doap:Project>
+		<doap:name>LDAP2OWL Conversion Tool</doap:name>
+		<doap:shortname>ldap2owl</doap:shortname>
+		<doap:homepage rdf:resource="http://sebastian.dietzold.de/archive/2005/04/13/ldap2owl.php"/>
+		<doap:created>2005-04-13</doap:created>
+		<doap:description>LDAP2OWL converts a directory information tree (DIT) complete with schema information (which will translated into an OWL ontology) and directory objects.</doap:description>
+		<doap:shortdesc>Converts LDAP DIT and schema to RDF.</doap:shortdesc>
+		<doap:programming-language>PHP</doap:programming-language>
+		<doap:license rdf:resource="http://usefulinc.com/doap/licenses/asl20"/>
+		<doap:license rdf:resource="http://usefulinc.com/doap/licenses/gpl"/>
+		<doap:license rdf:resource="http://usefulinc.com/doap/licenses/lgpl"/>
+		<doap:maintainer>
+			<foaf:Person>
+				<foaf:name>Sebastian Dietzold</foaf:name>
+				<foaf:nick>Seebi</foaf:nick>
+				<foaf:mbox rdf:resource="mailto:sebastian@dietzold.de" />
+				<rdfs:seeAlso rdf:resource="http://sebastian.dietzold.de/rdf/foaf.rdf"/>
+			</foaf:Person>
+		</doap:maintainer>
+	</doap:Project>
+</rdf:RDF>
